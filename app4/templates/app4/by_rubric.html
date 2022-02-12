@@ -1,0 +1,31 @@
+{% extends "layout/base.html" %}
+{% load static %}
+
+{% block title %}{{ current_rubric.name }}{% endblock %}
+{% block content %}
+<style>
+body {
+background-color: #c0c0c0
+}
+</style>
+<div class="container-fluid">
+    <div class="row">ᅠ
+    </div>
+    <div class="row">
+        <div class="form-group col">
+            <h2 class="btn btn-lg btn-success">Рубрика: {{ current_rubric.name }}</h2>
+            {% for friend in friends %}
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <img class="card-img-top" src="{% static 'app4/home2.jpg' %}" alt="1">
+                    <h5 class="card-title">{{ friend.nick_name }}</h5>
+                    <p class="card-text">{{ friend.description }}</p>
+                    <p class="card-text"><p>{{ friend.price }}</p></p>
+                    <a class="btn btn-primary">Купить</a>
+                </div>
+            </div>
+{% endfor %}
+        </div>
+    </div>
+{% endblock %}
+</div>
